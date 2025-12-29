@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VSK Interiors</title>
+
+<style>
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== GLOBAL ===== */
+body {
+  background: #101010;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(27, 27, 27);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffdf6c;
+  text-shadow: 0 0 4px #ffdf6c;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffdf6c;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  margin-top: 70px;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.35);
+}
+
+.hero-overlay h1 {
+  font-size: 2.6rem;
+  color: #ffdf6c;
+  margin-bottom: 15px;
+}
+
+.hero-overlay p {
+  max-width: 900px;
+  font-size: 1.05rem;
+  color: #e0e0e0;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 70px 20px;
+  text-align: center;
+  background: #2a2a2a;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #ffdf6c;
+  margin-bottom: 20px;
+}
+
+/* ===== PROJECT TITLES ===== */
+.gradient-text {
+  font-size: 28px;
+  font-weight: bold;
+  background-color:  #ffdf6c;;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 40px 0 15px;
+}
+
+.gradient-text2 {
+  font-size: 35px;
+  font-weight: bold;
+ background-color:  #ffdf6c;;
+  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+}
+
+/* ===== IMAGE SCROLL ===== */
+.image-section {
+  margin-bottom: 50px;
+}
+
+.scroll-container {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(20,20,20,0.8);
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.scroll-container img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #D9BE14;
+}
+
+/* ===== FULLSCREEN ===== */
+#fullscreenOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+#fullscreenOverlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* ===== SERVICES ===== */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.service-box {
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 40px 20px;
+  background: #1f1f1f;
+  text-align: center;
+}
+
+footer a {
+  color: #ffdf6c;
+  text-decoration: none;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .gradient-text2 {
+    font-size: 40px;
+  }
+
+  .scroll-container img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+#about {
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("about-bg.jpg") no-repeat center center/cover;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">VSK Interiors</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <img src="hero.png">
+  <div class="hero-overlay">
+    <div>
+      <h1>✨ Designing Dreams. Defining Lifestyles.</h1>
+      <p>      Welcome to VSK Interiors — where imagination meets craftsmanship.We transform every corner into an expression of style, comfort, and 
+  sophistication.From concept to completion, our designs breathe life into spaces, making them uniquely yours.
+        Discover interiors that go beyond beauty — interiors that inspire the way you live. </p>
+    </div>
+  </div>
+</div>
+
+
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
+ 
+  
+ 
+   <div class="image-section">
+     <div class="scroll-container">
+       <img src="serv/kitchen.png" alt="Kitchen Design" onclick="openFullscreen(this)">
+        <img src="serv/pooja-unit.png" alt="Kitchen Design" onclick="openFullscreen(this)">
+          <img src="serv/furnitures.png" alt="Kitchen Design" onclick="openFullscreen(this)">
+            <img src="serv/home-furnitures.png" alt="Kitchen Design" onclick="openFullscreen(this)">
+            <img src="serv/cooker-unit.png" alt="Kitchen Design" onclick="openFullscreen(this)">
+              
+    </div>
+  </div>
+<br>
+
+    🛋️ Interior Design<br>
+      Stylish,Smart,and functional spaces that reflect
+    <br>
+    <br><br>
+    🏠 Space Planning<br>
+          <p class="tcolour">Beautiful layouts that make every inch count.</p>
+    <br><br>
+    💡 Complete Execution<br>
+    From idea to reality - We build your dream space.</div>
+  
+</section>
+
+
+<section id="about"><br>
+  <h2 class="section-title">About Us</h2><br>
+  <p> VSK Interiors crafts stories through design by blending creativity,
+    functionality, and fine craftsmanship into every space.</p>
+<br></section>
+
+<section id="projects">
+  <div class="gradient-text2">Projects</div>
+
+  <div class="gradient-text">KITCHEN</div>
+  <div class="image-section">
+    <div class="scroll-container">
+       <img src="port-proj/IMG-20251013-WA0001.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0004.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0003.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0005.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0006.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0008.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0009.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0010.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0011.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0012.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0013.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0014.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0015.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">  
+      <img src="port-proj/IMG-20251013-WA0016.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0019.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0041.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0042.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0043.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0044.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0046.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0045.jpg" alt="Kitchen Design" onclick="openFullscreen(this)"> 
+    </div>
+  </div> 
+
+
+
+  <div class="gradient-text">BEDROOMS</div>
+   <div class="image-section">
+     <div class="scroll-container">
+         <img src="port-proj/IMG-20251013-WA0017.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+       <img src="port-proj/IMG-20251013-WA0018.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+        <img src="port-proj/IMG-20251013-WA0020.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+         <img src="port-proj/IMG-20251013-WA0021.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+          <img src="port-proj/IMG-20251013-WA0024.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+           <img src="port-proj/IMG-20251013-WA0026.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+            <img src="port-proj/IMG-20251013-WA0027.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+             <img src="port-proj/IMG-20251013-WA0029.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+               <img src="port-proj/IMG-20251013-WA0032.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+                <img src="port-proj/IMG-20251013-WA0034.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+                 <img src="port-proj/IMG-20251013-WA0037.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+                  <img src="port-proj/IMG-20251013-WA0039.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+                    <img src="port-proj/IMG-20251013-WA0040.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+                      <img src="port-proj/IMG-20251013-WA0036.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">  
+    </div>
+  </div>
+
+
+
+
+  <div class="gradient-text"> WARDROBES</div>
+   <div class="image-section">
+     <div class="scroll-container">
+        <img src="port-proj/IMG-20251013-WA0022.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+   <img src="port-proj/IMG-20251013-WA0023.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+    <img src="port-proj/IMG-20251013-WA0025.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+     <img src="port-proj/IMG-20251013-WA0028.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+      <img src="port-proj/IMG-20251013-WA0030.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+        <img src="port-proj/IMG-20251013-WA0033.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+         
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="gradient-text"> FURNITURES</div>
+   <div class="image-section">
+     <div class="scroll-container">
+       <img src="port-proj/IMG-20251013-WA0035.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+    <img src="port-proj/IMG-20251013-WA0038.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+    
+    
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="gradient-text">  CRAFTED SPACE</div>
+   <div class="image-section">
+     <div class="scroll-container">
+       <img src="port-proj/IMG-20251013-WA0002.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+        <img src="port-proj/IMG-20251013-WA0031.jpg" alt="Kitchen Design" onclick="openFullscreen(this)">
+    
+    </div>
+  </div>
+
+
+
+
+  
+
+
+
+
+
+</section>
+
+
+<!-- FOOTER -->
+<footer id="contact">
+  <p>📞 +91 88386 35463 | +91 94443 26403</p>
+  <p>✉ <a href="mailto:vskinteriorambt@gmail.com">vskinteriorambt@gmail.com</a></p>
+  <p>
+    <a href="https://www.instagram.com/vsk___interiors/" target="_blank">
+      Follow us on Instagram
+    </a>
+  </p>
+  <p>© 2025 VSK Interiors</p>
+</footer>
+
+<script>
+function openFullscreen(img) {
+  document.getElementById("fullscreenOverlay").style.display = "flex";
+  document.getElementById("fullscreenImg").src = img.src;
+}
+function closeFullscreen() {
+  document.getElementById("fullscreenOverlay").style.display = "none";
+}
+</script>
+
+<div id="fullscreenOverlay">
+  <span class="close-btn" onclick="closeFullscreen()">&times;</span>
+  <img id="fullscreenImg">
+</div>
+
+</body>
+</html>
